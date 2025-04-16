@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Colors.MainPage">
+
+    <ScrollView>
+        <FlexLayout Direction="Column" JustifyContent="Center">
+
+            <Label Text="Red Value"/>
+            <Slider x:Name="R"
+                Minimum="0"
+                Maximum="255"
+                Value="0"
+                ThumbColor="Red"
+                ValueChanged="Slide_change"
+                
+            />       
+ 
+
+            <Label Text="Green Value"/>
+
+            <Slider x:Name="G"
+                Minimum="0"
+                Maximum="255"
+                Value="0"
+                ThumbColor="Green"
+                ValueChanged="Slide_change"
+                />
+
+            <Label Text="Blue Value"/>
+            <Slider x:Name="B"
+                Minimum="0"
+                Maximum="255"
+                Value="0"
+                ThumbColor="Blue"
+                ValueChanged="Slide_change"
+
+                />
+            <Label x:Name="Value_label"
+                />
+            <Button x:Name="Change_background"
+                Text="Generate Random Color"
+                Clicked="Change_background_Clicked"
+                />
+        </FlexLayout>
+    </ScrollView>
+
+</ContentPage>
