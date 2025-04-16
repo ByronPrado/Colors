@@ -11,7 +11,7 @@
                 Minimum="0"
                 Maximum="255"
                 Value="0"
-                ThumbColor="Red"
+                ThumbColor="{StaticResource Primary}"
                 ValueChanged="Slide_change"
                 
             />       
@@ -23,7 +23,7 @@
                 Minimum="0"
                 Maximum="255"
                 Value="0"
-                ThumbColor="Green"
+                ThumbColor="{StaticResource Primary}"
                 ValueChanged="Slide_change"
                 />
 
@@ -32,7 +32,7 @@
                 Minimum="0"
                 Maximum="255"
                 Value="0"
-                ThumbColor="Blue"
+                ThumbColor="{StaticResource Primary}"
                 ValueChanged="Slide_change"
 
                 />
@@ -41,6 +41,7 @@
             <Button x:Name="Change_background"
                 Text="Generate Random Color"
                 Clicked="Change_background_Clicked"
+                BackgroundColor="#0000FF"
                 />
         </FlexLayout>
     </ScrollView>

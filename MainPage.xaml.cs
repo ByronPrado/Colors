@@ -15,7 +15,21 @@ public partial class MainPage : ContentPage
 
     private void Change_background_Clicked(object sender, EventArgs e)
     {
-		
+		 // Generate random RGB values
+		Random random = new Random();
+		int red = random.Next(0, 256);
+		int green = random.Next(0, 256);
+		int blue = random.Next(0, 256);
+
+		// Create a new color from the random RGB values
+		Color randomColor = Color.FromRgb(red, green, blue);
+
+		// Set the background color of the page
+		this.BackgroundColor = randomColor;
+
+		// Optionally, update the label to display the color values
+		Value_label.Text = $"Background Color: RGB({red}, {green}, {blue})";
+
     }
 }
 
