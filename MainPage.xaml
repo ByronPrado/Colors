@@ -2,54 +2,55 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Colors.MainPage">
-     <!-- Fondo general -->
+    <!-- Fondo general -->
     <Grid>
         <!-- Fondo de la aplicación -->
-        <BoxView x:Name="BackgroudApp" BackgroundColor="White" />
+        <BoxView x:Name="BackgroudApp" BackgroundColor="Blue" />
 
-        <!-- Contenedor principal -->
+         <!-- Contenedor principal -->
         <Frame CornerRadius="20"
                Padding="10"
                HasShadow="False"
                BackgroundColor="White"
                HorizontalOptions="Center"
-               VerticalOptions="Start"
-               Margin="20">
+               VerticalOptions="Center"
+               Margin="10">
 
-            <ScrollView>
-                <FlexLayout Direction="Column" JustifyContent="Center" Padding="10">
+            <VerticalStackLayout Spacing="10" Padding="10" HorizontalOptions="Center">
 
-                    <Label Text="Red Value" />
-                    <Slider x:Name="R"
-                            Minimum="0"
-                            Maximum="255"
-                            Value="0"
-                            ThumbColor="{StaticResource Primary}"
-                            ValueChanged="Slide_change" />
+                <Label Text="Red Value" />
+                <Slider x:Name="R"
+                        Minimum="0"
+                        Maximum="255"
+                        Value="0"
+                        ThumbColor="{StaticResource Primary}"
+                        HorizontalOptions="Fill"
+                        ValueChanged="Slide_change" />
 
-                    <Label Text="Green Value" />
-                    <Slider x:Name="G"
-                            Minimum="0"
-                            Maximum="255"
-                            Value="0"
-                            ThumbColor="{StaticResource Primary}"
-                            ValueChanged="Slide_change" />
+                <Label Text="Green Value" />
+                <Slider x:Name="G"
+                        Minimum="0"
+                        Maximum="255"
+                        Value="0"
+                        ThumbColor="{StaticResource Primary}"
+                        HorizontalOptions="Fill"
+                        ValueChanged="Slide_change" />
 
-                    <Label Text="Blue Value" />
-                    <Slider x:Name="B"
-                            Minimum="0"
-                            Maximum="255"
-                            Value="0"
-                            ThumbColor="{StaticResource Primary}"
-                            ValueChanged="Slide_change" />
+                <Label Text="Blue Value" />
+                <Slider x:Name="B"
+                        Minimum="0"
+                        Maximum="255"
+                        Value="0"
+                        ThumbColor="{StaticResource Primary}"
+                        HorizontalOptions="Fill"
+                        ValueChanged="Slide_change" />
 
-                    <Label x:Name="Value_label" />
-                    <Button x:Name="Change_background"
-                            Text="Generate Random Color"
-                            Clicked="Change_background_Clicked"
-                            BackgroundColor="#0000FF" />
-                </FlexLayout>
-            </ScrollView>
+                <Label x:Name="Value_label" />
+                <Button x:Name="Change_background"
+                        Text="Generate Random Color"
+                        Clicked="Change_background_Clicked"
+                        BackgroundColor="#0000FF" />
+            </VerticalStackLayout>
         </Frame>
     </Grid>
 </ContentPage>
