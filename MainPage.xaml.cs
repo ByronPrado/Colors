@@ -43,13 +43,10 @@ public partial class MainPage : ContentPage
    }
 
    private async void CopyToClipboard(object sender, EventArgs e)
-{
-    await Clipboard.SetTextAsync(Value_label.Text);
-	Label_copied.IsVisible = true;
-    await Label_copied.FadeTo(1, 250);
-    await Task.Delay(1000);
-    await Label_copied.FadeTo(0, 250);
-    Label_copied.IsVisible = false;
-}
+	{
+		await Clipboard.SetTextAsync(Value_label.Text);
+		Label_copied.IsVisible = true;
+
+	}
 }
 
