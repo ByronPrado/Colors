@@ -2,9 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Colors.MainPage">
-
-    <Grid>
-        <BoxView x:Name="BackgroudApp" BackgroundColor="Blue" />
+             
+    <Grid x:Name="BackgroudApp" 
+        BackgroundColor="Blue">
 
         <Frame CornerRadius="20"
                Padding="10"
@@ -62,9 +62,6 @@
                                 <Label x:Name="Value_label"
                                         Text="HEX"
                                         FontSize="14">
-                                        <Label.GestureRecognizers>
-                                                <TapGestureRecognizer Tapped="CopyToClipboard"/>
-                                        </Label.GestureRecognizers>
                                 </Label>
 
 
@@ -82,6 +79,9 @@
                                                 Color="Black" />
                                 </Frame>
                         </HorizontalStackLayout>
+                        <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="CopyToClipboard"/>
+                        </Frame.GestureRecognizers>
                 </Frame>
 
                 <Button x:Name="Change_background"
