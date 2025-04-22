@@ -1,4 +1,4 @@
-﻿namespace Colors;
+namespace Colors;
 using Microsoft.Maui.Controls;
 public partial class MainPage : ContentPage
 {
@@ -31,14 +31,25 @@ public partial class MainPage : ContentPage
 		int red = (int)R.Value;
 		int green = (int)G.Value;
 		int blue = (int)B.Value;
-		// Create a new color from the slider values
 		Color color = Color.FromRgb(red, green, blue);
 
-        // Set the background color of the page
         BackgroudApp.BackgroundColor = color;
+		Change_background.BackgroundColor = color;
+		ColorSquare.Color = color;
 
-		// Update the label to display the RGB values
-		Value_label.Text = $"RGB({red}, {green}, {blue})";
+		string hex = $"#{red:X2}{green:X2}{blue:X2}";
+		Value_label.Text = hex;
+
    }
+
+   private async void CopyToClipboard(object sender, EventArgs e)
+{
+    await Clipboard.SetTextAsync(Value_label.Text);
+	Label_copied.IsVisible = true;
+    await Label_copied.FadeTo(1, 250);
+    await Task.Delay(1000);
+    await Label_copied.FadeTo(0, 250);
+    Label_copied.IsVisible = false;
+}
 }
 
