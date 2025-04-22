@@ -1,13 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Colors.MainPage">
-    <!-- Fondo general -->
+
     <Grid>
-        <!-- Fondo de la aplicación -->
         <BoxView x:Name="BackgroudApp" BackgroundColor="Blue" />
 
-         <!-- Contenedor principal -->
         <Frame CornerRadius="20"
                Padding="10"
                HasShadow="False"
@@ -45,7 +43,47 @@
                         HorizontalOptions="Fill"
                         ValueChanged="Slide_change" />
 
-                <Label x:Name="Value_label" />
+                <Label x:Name="Label_copied"
+                        Text="Copiado en el portapapeles"
+                        FontSize="14"
+                        IsVisible="False"/>
+
+                <Frame  x:Name="HexColorFrame"
+                        Padding="10"
+                        HasShadow="True"
+                        WidthRequest="140"
+                        BackgroundColor="White">
+                        <HorizontalStackLayout 
+                                Spacing="10"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center">
+
+
+                                <Label x:Name="Value_label"
+                                        Text="HEX"
+                                        FontSize="14">
+                                        <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="CopyToClipboard"/>
+                                        </Label.GestureRecognizers>
+                                </Label>
+
+
+                                <Frame Padding="0"
+                                        WidthRequest="22"
+                                        HeightRequest="22"
+                                        CornerRadius="0"
+                                        BorderColor="Black"
+                                        BackgroundColor="Transparent"
+                                        VerticalOptions="Center"
+                                        HorizontalOptions="Center">
+                                        <BoxView x:Name="ColorSquare"
+                                                WidthRequest="20"
+                                                HeightRequest="20"
+                                                Color="Black" />
+                                </Frame>
+                        </HorizontalStackLayout>
+                </Frame>
+
                 <Button x:Name="Change_background"
                         Text="Generate Random Color"
                         Clicked="Change_background_Clicked"
