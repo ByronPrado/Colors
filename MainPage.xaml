@@ -15,7 +15,10 @@
                Margin="10">
 
             <VerticalStackLayout Spacing="10" Padding="10" HorizontalOptions="Center">
-
+                <Label  Text="Color Maker"
+                        HorizontalOptions="Center"
+                        FontAttributes="Bold"
+                        FontSize="22"/>
                 <Label Text="Red Value" />
                 <Slider x:Name="R"
                         Minimum="0"
@@ -73,10 +76,10 @@
                                         BackgroundColor="Transparent"
                                         VerticalOptions="Center"
                                         HorizontalOptions="Center">
-                                        <BoxView x:Name="ColorSquare"
-                                                WidthRequest="20"
-                                                HeightRequest="20"
-                                                Color="Black" />
+                                        <Image Source="copy.jpg"
+                                                WidthRequest="22"
+                                                HeightRequest="22"
+                                                />
                                 </Frame>
                         </HorizontalStackLayout>
                         <Frame.GestureRecognizers>
@@ -87,7 +90,7 @@
                 <Button x:Name="RandomButton"
                         Text="Generate Random Color"
                         Clicked="RandomButton_Clicked"
-                        BackgroundColor="Black" />
+                        BackgroundColor="Red" />
             </VerticalStackLayout>
         </Frame>
     </Grid>
