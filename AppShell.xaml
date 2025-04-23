@@ -8,7 +8,7 @@
     Title="Colors">
 
     <ShellContent
-        Title="Home"
+        Title="Colors"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
