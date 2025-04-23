@@ -4,7 +4,7 @@
              x:Class="Colors.MainPage">
              
     <Grid x:Name="BackgroudApp" 
-        BackgroundColor="Blue">
+        BackgroundColor="Black">
 
         <Frame CornerRadius="20"
                Padding="10"
@@ -23,7 +23,7 @@
                         Value="0"
                         ThumbColor="{StaticResource Primary}"
                         HorizontalOptions="Fill"
-                        ValueChanged="Slide_change" />
+                        ValueChanged="Slider_ValueChanged" />
 
                 <Label Text="Green Value" />
                 <Slider x:Name="G"
@@ -32,7 +32,7 @@
                         Value="0"
                         ThumbColor="{StaticResource Primary}"
                         HorizontalOptions="Fill"
-                        ValueChanged="Slide_change" />
+                        ValueChanged="Slider_ValueChanged" />
 
                 <Label Text="Blue Value" />
                 <Slider x:Name="B"
@@ -41,7 +41,7 @@
                         Value="0"
                         ThumbColor="{StaticResource Primary}"
                         HorizontalOptions="Fill"
-                        ValueChanged="Slide_change" />
+                        ValueChanged="Slider_ValueChanged" />
 
                 <Label x:Name="Label_copied"
                         Text="Copiado en el portapapeles"
@@ -60,7 +60,7 @@
 
 
                                 <Label x:Name="Value_label"
-                                        Text="HEX"
+                                        Text="#000000"
                                         FontSize="14">
                                 </Label>
 
@@ -80,14 +80,14 @@
                                 </Frame>
                         </HorizontalStackLayout>
                         <Frame.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="CopyToClipboard"/>
+                                <TapGestureRecognizer Tapped="Clipboard_Clicked"/>
                         </Frame.GestureRecognizers>
                 </Frame>
 
-                <Button x:Name="Change_background"
+                <Button x:Name="RandomButton"
                         Text="Generate Random Color"
-                        Clicked="Change_background_Clicked"
-                        BackgroundColor="#0000FF" />
+                        Clicked="RandomButton_Clicked"
+                        BackgroundColor="Black" />
             </VerticalStackLayout>
         </Frame>
     </Grid>
